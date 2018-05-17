@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Loaner Request" max_length="40" name="x_183600_loaner_re_loaner_request" type="collection"/>
+    <element extends="task" label="Loaner Request" max_length="40" name="x_183600_loaner_re_loaner_request" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" default="cmdb_ci_mobile_device" label="Item type" mandatory="true" max_length="40" name="u_choice_7" type="string">
+            <choice>
+                <element label="Laptop" sequence="0" value="cmdb_ci_computer"/>
+                <element label="Mobile Phone" sequence="1" value="cmdb_ci_mobile_device"/>
+                <element label="Projector" sequence="2" value="cmdb_ci_projector"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="sc" label="Depot" mandatory="true" max_length="40" name="u_depot" type="string">
+            <choice>
+                <element label="New York" sequence="0" value="ny"/>
+                <element label="London" sequence="1" value="ln"/>
+                <element label="Buenos Aires" sequence="2" value="ba"/>
+                <element label="Santa Clara" sequence="3" value="sc"/>
+                <element label="Singapore" sequence="4" value="sg"/>
+                <element label="Sydnei" sequence="5" value="sd"/>
+            </choice>
+        </element>
+        <element label="Start date" mandatory="true" max_length="40" name="u_glide_date_time_2" type="glide_date_time"/>
+        <element label="End date" mandatory="true" max_length="40" name="u_glide_date_time_3" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
+        <element label="Request for" mandatory="true" max_length="32" name="u_reference_1" reference="sys_user" type="reference"/>
+        <element label="Location to be used" max_length="32" name="u_reference_5" reference="cmdb_ci_appl_dot_net" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Additional comments" max_length="40" name="u_string_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Location to be used" mandatory="true" max_length="40" name="u_string_9" type="string"/>
+    </element>
 </database>
